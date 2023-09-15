@@ -5,17 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="Shelving, Stacking, Hanging: Relational Pose Diffusion for Multi-modal Rearrangement">
-    <meta name="author" content="Anthony Simeonov,
-                                Ankit Goyal,
-                                Lucas Manuelli,
-                                Lin Yen-Chen,
-                                Alina Sarmiento,
-                                Alberto Rodriguez,
-                                Pulkit Agrawal,
-                                Dieter Fox">
+          content="Gripper-Aware Grasping: End-Effector Shape Context for Cross-Gripper Generalization">
+    <meta name="author" content="Alina Sarmiento,
+				 Anthony Simeonov,
+                                Pulkit Agrawal">
 
-    <title>Shelving, Stacking, Hanging: Relational Pose Diffusion for Multi-modal Rearrangement</title>
+    <title>Gripper-Aware Grasping: End-Effector Shape Context for Cross-Gripper Generalization</title>
     <!-- Bootstrap core CSS -->
     <!--link href="bootstrap.min.css" rel="stylesheet"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -28,22 +23,14 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
-    <h2>Shelving, Stacking, Hanging: Relational Pose</br> Diffusion for Multi-modal Rearrangement</h2>
+    <h2>Gripper-Aware Grasping</br> End-Effector Shape Context for Cross-Gripper Generalization</h2>
     <h3>arXiv 2023</h3>
     <hr>
     <p class="authors">
+        <a href="https://alinasarmiento.github.io/"> Alina Sarmiento</a>,
         <a href="https://anthonysimeonov.github.io/"> Anthony Simeonov</a>,
-        <a href="https://imankgoyal.github.io/"> Ankit Goyal*</a>,
-        <a href="http://lucasmanuelli.com/"> Lucas Manuelli*</a>,
-        <a href="https://yenchenlin.me/"> Lin Yen-Chen</a>,</br>
-        <a href="https://www.linkedin.com/in/alina-sarmiento/"> Alina Sarmiento</a>,
-        <a href="https://meche.mit.edu/people/faculty/ALBERTOR@MIT.EDU"> Alberto Rodriguez</a>,
-        <a href="http://people.csail.mit.edu/pulkitag/"> Pulkit Agrawal**</a>,
-        <a href="https://homes.cs.washington.edu/~fox/"> Dieter Fox**</a></br>
-        Massachusetts Institute of Technology, NVIDIA Research</br>
-    </p>
-    <p>
-        *Equal contribution, **Equal advising </br>Work done in part during NVIDIA Research internship
+        <a href="http://people.csail.mit.edu/pulkitag/"> Pulkit Agrawal</a>
+        Massachusetts Institute of Technology</br>
     </p>
     <div class="btn-group" role="group" aria-label="Top menu">
         <a class="btn btn-primary" href="https://arxiv.org/abs/2307.04751">Paper</a>
@@ -60,18 +47,19 @@
         </div>
         <hr>
         <p>
-            We propose a system for rearranging objects in a scene to achieve a desired object-scene placing relationship, 
-            such as a book inserted in an open slot of a bookshelf. The pipeline generalizes to novel geometries, poses, 
-            and layouts of both scenes and objects, and is trained from demonstrations to operate directly on 3D point clouds. 
-            
-            Our system overcomes challenges associated with the existence of many geometrically-similar rearrangement solutions 
-            for a given scene. By leveraging an iterative pose de-noising training procedure, we can fit multi-modal demonstration 
-            data and produce multi-modal outputs while remaining precise and accurate. We also show the advantages of conditioning 
-            on relevant local geometric features while ignoring irrelevant global structure that harms both generalization and 
-            precision. 
-            
-            We demonstrate our approach on three distinct rearrangement tasks that require handling multi-modality and 
-            generalization over object shape and pose in both simulation and the real world.
+          In cluttered, unmodeled environments, many learned manipulation pipelines rely on some
+	  inherent knowledge of robot and end-effector extents to predict or solve for feasible grasp poses
+	  and motion plans. However, these models become specific to one robot geometry and cannot effectively
+	  generalize to other end-effectors that have different feasible grasp distributions.
+
+	  We present Gripper-Aware GraspNet, a learned pipeline for grasping and manipulating unknown objects in highly
+	  occluded environments, conditioned on gripper geometry.
+
+	  This method builds off of prior work in learned 6D grasp generation that was previously limited to
+	  specific gripper geometries and can predict grasps that utilize a wide range of gripper extents. We
+	  demonstrate results on cluttered tabletop picking from a single view pointcloud, and show results that
+	  utilize full gripper extents across different end-effectors in simulation. We also show a qualitative
+	  improvement on grasp diversity when using different grippers in the real world.
         </p>
     </div>
 
